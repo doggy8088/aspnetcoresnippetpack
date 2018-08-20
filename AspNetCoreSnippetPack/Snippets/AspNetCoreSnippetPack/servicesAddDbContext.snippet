@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+    <Title>services-add-dbcontext</Title>
+    <Author>Will 保哥</Author>
+    <Description>Code snippet for "services.AddDbContext&lt;T&gt;()"</Description>
+    <HelpUrl>
+    </HelpUrl>
+    <Shortcut>servicesAddDbContext</Shortcut>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Microsoft.EntityFrameworkCore</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>ContextName</ID>
+        <ToolTip>ContextName</ToolTip>
+        <Default>ContextName</Default>
+        <Function>
+        </Function>
+      </Literal>
+      <Literal Editable="true">
+        <ID>DefaultConnection</ID>
+        <ToolTip>DefaultConnection</ToolTip>
+        <Default>DefaultConnection</Default>
+        <Function>
+        </Function>
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$"><![CDATA[services.AddDbContext<$ContextName$Context>(options =>
+    options.UseSqlServer(Configuration.GetConnectionString("$DefaultConnection$")));
+]]></Code>
+  </Snippet>
+</CodeSnippet>
